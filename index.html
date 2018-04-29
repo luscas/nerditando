@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html ng-app="nerditando">
+<head>
+	<meta charset="UTF-8">
+	<meta name="robots" content="index, follow">
+	<meta name="build" content="16:20 11 MARCH 2016">
+
+	<title>Nerditando</title>
+
+	<link href="favicon.png" rel="icon">
+	<link href="assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+	<header class="header">
+		<div class="container">
+			<a href="#" class="logo">
+				<!-- <span class="social">
+					<img src="assets/img/social.png" height="24" width="257" alt="">
+				</span> -->
+			</a>
+
+			<div class="social">
+				<a href="#" class="skype"></a>
+				<a href="#" class="youtube"></a>
+				<a href="#" class="facebook"></a>
+			</div>
+		</div>
+
+		<div class="separator">
+			<div class="container">
+				<a href="javascript:;" class="breadcrumb">Jogos</a>
+
+				<div class="search">
+					<h1>Pesquise na Nerditando!</h1>
+
+					<div class="cf"></div>
+
+					<button type="button" class="btn-ribbon">CADASTRE O SEU JOGO!</button>
+
+					<input type="text">
+
+					<button type="submit">
+						<i class="icon-search-1"></i>
+					</button>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<nav class="navbar">
+		<div class="container">
+			<!-- MENU START -->
+			<nav class="navbar-nav">
+				<a href="">
+					Home
+				</a>
+
+				<a href="categorias">
+					Categorias <i class="icon-angle-down"></i>
+				</a>
+
+				<a href="jogos">
+					Jogos <i class="icon-angle-down"></i>
+				</a>
+
+				<a href="equipe" class="animated rubberBand">
+					Equipe <span class="bubble warning">Novo</span>
+				</a>
+
+				<a href="chat">Chat</a>
+			</nav>
+			<!-- MENU END -->
+
+			<!-- LOGIN START -->
+			<section class="login" ng-controller="LoginController">
+				<!-- username -->
+				<span class="username">
+					Bem-vindo, <strong><a href="#">Lucas</a></strong>!
+				</span>
+				<!-- avatar -->
+				<figure class="avatar">
+					<!-- photo -->
+					<img src="assets/img/placeholder.png" width="50" height="50" alt="">
+					<div class="status {{ status == 'ON' ? 'online' : 'offline' }}"></div>
+					<!-- dropdown -->
+					<div class="dropdown hide">
+						<ul class="dropdown-menu">
+							<li><a href="/user/settings">Configurações</a></li>
+							<li>
+								<a href="#">Status: <font color="{{ status == 'ON' ? '#85B200' : '#B22C00' }}">{{ status }}</font></a>
+								<div class="checkbox" style="margin-top: 4px; float: right;">
+									<input id="checkbox" type="checkbox" checked>
+									<label for="checkbox" ng-click="change()">
+										<span></span>
+									</label>
+								</div>
+							</li>
+							<li><a href="/user/add-game">Adicionar jogo</a></li>
+							<li><a href="/user/more">Mais</a></li>
+						</ul>
+					</div>
+				</figure>
+				<!-- logout -->
+				<a href="/user/logout" class="logout">Sair <i class="icon-logout-3"></i></a>
+			</section>
+			<!-- LOGIN END -->
+		</div>
+	</nav>
+
+	<main class="main">
+		<div class="container">
+			<div class="alert alert-default">
+				Atenção! O Nerditando não hospeda servidores de jogos, apenas indicamos os links encontrados em buscadores como Google, Bing, Yahoo, entre outros. Os servidores listados abaixo, são responsabilidade de seus criadores. O nerditando.com não é propriedade da empresa Sulake, somos um portal independente. Fontes e imagens, são direitos dos jogos e responsabilidade das mesmas.
+				<span class="close"></span>
+			</div>
+
+			<div class="row" data-mt="30">
+				<div class="card" data-grid="630">
+					<h1>Bate papo (3)</h1>
+					<div class="box">
+						<!-- CHAT START -->
+						<ul class="chat">
+							<li>
+								<figure class="avatar">
+									<img src="assets/img/placeholder.png" alt="">
+								</figure>
+
+								<a class="name" href="#"> <span class="status online"></span> Lucas</a>
+								<div class="message" data-posted="há 6 minutos">Boa tarde!</div>
+								<a class="posted">10 segundos atrás</a>
+							</li>
+							<li>
+								<figure class="avatar">
+									<img src="assets/img/placeholder.png" alt="">
+								</figure>
+
+								<a class="name" href="#"> <span class="status online"></span> Lucas</a>
+								<div class="message" data-posted="há 6 minutos">Galera, acessem ai: http://disccos.net! Simplesmente o melhor HP, com tudo bem feito e atualizado! Vocês não vão se arrepender...</div>
+								<a class="posted">10 segundos atrás</a>
+							</li>
+							<li>
+								<figure class="avatar">
+									<img src="assets/img/placeholder.png" alt="">
+								</figure>
+
+								<a class="name" href="#"> <span class="status online"></span> Larissa</a>
+								<div class="message">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis exercitationem modi, reiciendis dignissimos culpa sequi eveniet ab nesciunt commodi soluta.</div>
+								<a class="posted">10 segundos atrás</a>
+							</li>
+						</ul>
+						<!-- CHAT END -->
+					</div>
+				</div>
+
+				<div class="card" data-grid="300">
+					<h1>Recomendados</h1>
+					<div class="box">
+						<ul class="recomendados">
+							<li>
+								<i class="icon official" title="Jogo verificado"></i> Disccos
+								<span class="badge primary">new R63 Crypto</span>
+							</li>
+
+							<li>
+								<i class="icon"></i> Mania Hotel
+								<span class="badge default">old Crypto</span>
+							</li>
+
+							<li>
+								<i class="icon"></i> Hebbo
+								<span class="badge default">new R63 Crypto</span>
+							</li>
+
+							<li>
+								<i class="icon"></i> Hablive
+								<span class="badge default">new R63 Crypto</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="row" data-mt="30">
+				<div class="card" data-grid-last="true" data-grid="960">
+					<h1>Em destaque</h1>
+					<div class="box" data-grid-right="25" data-grid="300">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore necessitatibus molestias harum nisi doloremque voluptas nemo eveniet perspiciatis quo, labore!</div>
+					<div class="box" data-grid-right="25" data-grid="300">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore necessitatibus molestias harum nisi doloremque voluptas nemo eveniet perspiciatis quo, labore!</div>
+					<div class="box" data-grid-right="25" data-grid="300">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore necessitatibus molestias harum nisi doloremque voluptas nemo eveniet perspiciatis quo, labore!</div>
+				</div>
+			</div>
+		</div>
+	</main>
+
+	<br>
+	<br>
+	<br>
+	<br>
+
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/angular.min.js"></script>
+	<script src="assets/js/angular-route.min.js"></script>
+	<script src="assets/js/angular-animate.min.js"></script>
+	<script src="assets/js/app.js"></script>
+</body>
+</html>
